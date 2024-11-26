@@ -83,10 +83,11 @@ namespace FF1Lib
 		public bool? IsBridgeFree => FreeBridge | NoOverworld | DesertOfDeath;
 		public bool? IsCanalFree => (FreeCanal & !NoOverworld) | DesertOfDeath;
 		public bool? IsFloaterRemoved => ((NoFloater|IsAirshipFree) & !NoOverworld) | DesertOfDeath;
+		public bool? IsShipRemoved => NoShip & !NoOverworld & !DesertOfDeath;
 		public bool? IncentivizeBridge => NPCItems & IncentivizeBridgeItem & !IsBridgeFree & !NoOverworld;
 		public bool? IncentivizeCanoe => NPCItems & IncentivizeCanoeItem & !FreeCanoe & !DesertOfDeath;
 		public bool? IncentivizeLute => NPCItems & !FreeLute & IncentivizeMainItems;
-		public bool? IncentivizeShip => NPCItems & IncentivizeShipAndCanal & !IsShipFree & !NoOverworld;
+		public bool? IncentivizeShip => NPCItems & IncentivizeShipAndCanal & !IsShipFree & !IsShipRemoved & !NoOverworld;
 		public bool? IncentivizeRod => NPCItems & !FreeRod & IncentivizeMainItems ;
 		public bool? IncentivizeCube => NPCItems & IncentivizeMainItems;
 		public bool? IncentivizeFloater => !IsAirshipFree & !IsFloaterRemoved & IncentivizeAirship;

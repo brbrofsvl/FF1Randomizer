@@ -88,6 +88,7 @@
 		bool? IsCanalFree { get; }
 		bool? IsShipFree { get; }
 		bool? GuaranteedMasamune { get; }
+		bool? IsShipRemoved { get; }
 
 	}
 	public interface IItemPlacementFlags : IItemShuffleFlags, IVictoryConditionFlags
@@ -163,10 +164,12 @@
 		bool? AllowDeepTowns { get; }
 		bool? AllowUnsafeStartArea { get; }
 		bool? IsFloaterRemoved { get; }
+		bool? IsShipRemoved { get; }
 	    bool? IsAirshipFree { get; }
 		bool? MapBahamutCardiaDock { get; }
 	    OwMapExchanges OwMapExchange { get; }
 		GameModes GameMode { get; }
+		
 	}
 	public interface IVictoryConditionFlags
 	{
@@ -182,6 +185,7 @@
 		bool? FreeTail { get; }
 		bool? NoTail { get; }
 		bool? IsFloaterRemoved { get; }
+		bool? IsShipRemoved { get; }
 		bool? AirBoat { get; }
 		bool? LooseExcludePlacedDungeons { get; }
 		bool NoOverworld { get; }

@@ -61,6 +61,7 @@ namespace FF1Lib.Sanity
 			if (b.HasFlag(SCBitFlags.Chime)) list.Add(Item.Chime.ToString());
 			if (b.HasFlag(SCBitFlags.Canoe)) list.Add(Item.Canoe.ToString());
 			if (b.HasFlag(SCBitFlags.Floater)) list.Add(Item.Floater.ToString());
+			if (b.HasFlag(SCBitFlags.Ship)) list.Add(Item.Ship.ToString());
 
 			return "(" + string.Join(" AND ", list) + ")";
 		}
@@ -104,6 +105,7 @@ namespace FF1Lib.Sanity
 			if (chg.HasFlag(MapChange.Chime)) v2req |= SCBitFlags.Chime;
 			if (chg.HasFlag(MapChange.Canoe)) v2req |= SCBitFlags.Canoe;
 			if (chg.HasFlag(MapChange.Airship)) v2req |= SCBitFlags.Floater;
+			if (chg.HasFlag(MapChange.Ship)) v2req |= SCBitFlags.Ship;
 
 			foreach (var flag in this)
 			{

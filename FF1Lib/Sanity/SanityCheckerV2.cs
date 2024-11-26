@@ -180,6 +180,12 @@ namespace FF1Lib
 				requiredMapChanges &= ~MapChange.Airship;
 			}
 
+			if ((bool)victoryConditions.IsShipRemoved)
+			{
+				requiredMapChanges &= ~MapChange.Ship;
+				
+			}
+
 			if (victoryConditions.GameMode == GameModes.DeepDungeon)
 			{
 				requiredMapChanges = MapChange.None;

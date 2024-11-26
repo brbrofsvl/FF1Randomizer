@@ -98,6 +98,7 @@ namespace FF1Lib
 				((bool)flags.NoXcalber, Item.Xcalber),
 				((bool)flags.NoTail, Item.Tail),
 				((bool)flags.IsFloaterRemoved, Item.Floater),
+				((bool)flags.IsShipRemoved, Item.Ship),
 			};
 
 			RemovedItems = KeyItems.Concat(removedItemsFlags.Where(i => i.Item1).Select(i => i.Item2)).ToList();
@@ -204,6 +205,7 @@ namespace FF1Lib
 				((bool)flags.NoXcalber, Item.Xcalber),
 				((bool)flags.NoTail, Item.Tail),
 				((bool)flags.IsFloaterRemoved, Item.Floater),
+				((bool)flags.IsShipRemoved, Item.Ship),
 			};
 
 			List<(bool, IRewardSource)> removedNPCItemsLocations = new()
